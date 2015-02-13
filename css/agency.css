@@ -209,7 +209,7 @@ fieldset[disabled] .btn-xl.active {
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 400;
     letter-spacing: 1px;
-    color: #fff;
+    /* color: #000; */
 }
 
 .navbar-default .nav li a:hover,
@@ -234,7 +234,7 @@ fieldset[disabled] .btn-xl.active {
     .navbar-default {
         padding: 25px 0;
         border: 0;
-        background-color: transparent;
+        background-color: #222;
         -webkit-transition: padding .3s;
         -moz-transition: padding .3s;
         transition: padding .3s;
@@ -263,7 +263,7 @@ fieldset[disabled] .btn-xl.active {
 
 header {
     text-align: center;
-    color: #fff;
+    color: #222;
     background-attachment: scroll;
     background-image: url(../img/header-bg.jpg);
     background-position: center center;
@@ -274,9 +274,19 @@ header {
     -o-background-size: cover;
 }
 
+.textbox {
+    
+    background-color: #fff;
+    /* padding: 10px 10px 10px 10px; */
+    border-radius: 10px;
+    
+}
+
+
 header .intro-text {
     padding-top: 100px;
     padding-bottom: 50px;
+  
 }
 
 header .intro-text .intro-lead-in {
