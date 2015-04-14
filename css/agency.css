@@ -663,37 +663,20 @@ aside.clients img {
 }
 
 section#contact {
-    background-color: #222;
-    background-image: url(../img/map-image.png);
+    background-color: light-gray;
     background-position: center;
     background-repeat: no-repeat;
+    padding: 50px 0px;
 }
 
 section#contact .section-heading {
-    color: #fff;
+    color: black;
 }
 
-section#contact .form-group {
-    margin-bottom: 25px;
+section#contact .section-margin {
+    margin: 0px 0px -65px 0px;
 }
 
-section#contact .form-group input,
-section#contact .form-group textarea {
-    padding: 20px;
-}
-
-section#contact .form-group input.form-control {
-    height: auto;
-}
-
-section#contact .form-group textarea.form-control {
-    height: 236px;
-}
-
-section#contact .form-control:focus {
-    border-color: #fed136;
-    box-shadow: none;
-}
 
 section#contact::-webkit-input-placeholder {
     text-transform: uppercase;
@@ -730,6 +713,7 @@ section#contact .text-danger {
 footer {
     padding: 25px 0;
     text-align: center;
+    background-color: black;
 }
 
 footer span.copyright {
