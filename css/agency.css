@@ -663,7 +663,25 @@ aside.clients img {
 }
 
 
+section#download .item_text{
+	display: table-cell;
+	width: 155px;
+	height: 48px;
+	text-align: left;
+	padding-left: 18px;
+}
 
+section#download .table-level1{
+	display: table;
+}
+
+section#download .table-level2{
+	display: table-row;
+}
+
+section#download .table-level3{
+	display: table-cell;
+}
 
 section#contact {
     background-color: light-gray;
