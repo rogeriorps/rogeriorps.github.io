@@ -163,63 +163,130 @@
                     </div>
                 </div>
                 
-                <div class="col-lg-6 col-md-6">
+                <div class="col-lg-12 col-md-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <h3>Parameters - Interleaved Mode</h3>
+                                    <h3>CPMEM Parameters</h3>
+
                                 </div>
                             </div>
                         </div>
                         <div class="panel-body">
+							<ul class="nav nav-pills">
+                                <li class="active"><a href="#interleaved-pills" data-toggle="tab">Interleaved mode</a>
+                                </li>
+                                <li><a href="#non-interleaved-pills" data-toggle="tab">Non Interleaved mode</a>
+                                </li>
+                            </ul>
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <div class="form-group">
-                                            <label>Word 0</label>
-                                            <input class="form-control" placeholder="00000000">
-                                    </div>
-                                    <div class="form-group">
-                                            <label>Word 1</label>
-                                            <input class="form-control" placeholder="00000000">
-                                    </div>                                    
+								
+								
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div class="tab-pane fade in active" id="interleaved-pills">
+								
+									<!-- Interleaved Tab panel -->
+									<div class="table-responsive">
+										<table class="table table-hover">
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Mnemonic</th>
+													<th>Size</th>
+													<th>To</th>
+													<th>From</th>
+													<th>Value (HEX)</th>
+													<th>Value (BIN)</th>
+													<th>Value (DEC)</th>
+													<th>Description</th>													
+												</tr>
+											</thead>
+											<tbody>
+											
+												<tr> <!-- XV Virtual Coordinate -->
+													<td>XV Virtual Coordinate</td>
+													<td>XV</td>
+													<td>10</td>
+													<td>9</td>
+													<td>0</td>													
+													<td>
+														<div class="row">
+															<div class="form-group col-lg-6">
+																<input class="form-control" placeholder="00000000" maxlength="4">
+															</div>
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>XV Virtual Coordinate .......</td>													
+												</tr>
+												
+												<tr> <!-- XV Virtual Coordinate -->
+													<td>YV Virtual Coordinate</td>
+													<td>YV</td>
+													<td>9</td>
+													<td>18</td>
+													<td>10</td>													
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>YV Virtual Coordinate .......</td>													
+												</tr>
+												
+
+												
+											</tbody>
+										</table>
+									</div>
+									<!-- ./ Interleaved Tab panel -->
+									
+									
+                                </div>
+                                <div class="tab-pane fade" id="non-interleaved-pills">
+                                    <h4>Profile Tab</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                </div>
+                            </div>								
+								
+								
+								
+								
+								
+
+							
+								
+                              
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-6 col-md-6">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <h3>Parameters - Non Interleaved Mode</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                            <label>Word 0</label>
-                                            <input class="form-control" placeholder="00000000">
-                                    </div>
-                                    <div class="form-group">
-                                            <label>Word 1</label>
-                                            <input class="form-control" placeholder="00000000">
-                                    </div>                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>                
-                
-                
-                
-                
-                
-                
+            
+
                 
             <!-- /.row -->
         </div>
