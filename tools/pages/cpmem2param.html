@@ -175,9 +175,9 @@
                         </div>
                         <div class="panel-body">
 							<ul class="nav nav-pills">
-                                <li class="active"><a href="#interleaved-pills" data-toggle="tab">Interleaved mode</a>
+                                <li class="active"><a href="#non-interleaved-pills" data-toggle="tab">Non Interleaved mode</a>
                                 </li>
-                                <li><a href="#non-interleaved-pills" data-toggle="tab">Non Interleaved mode</a>
+                                <li><a href="#interleaved-pills" data-toggle="tab">Interleaved mode</a>
                                 </li>
                             </ul>
                             <div class="row">
@@ -186,7 +186,7 @@
 								
                             <!-- Tab panes -->
                             <div class="tab-content">
-                                <div class="tab-pane fade in active" id="interleaved-pills">
+                                <div class="tab-pane fade in active" id="non-interleaved-pills">
 								
 									<!-- Interleaved Tab panel -->
 									<div class="table-responsive">
@@ -213,10 +213,8 @@
 													<td>9</td>
 													<td>0</td>													
 													<td>
-														<div class="row">
-															<div class="form-group col-lg-6">
-																<input class="form-control" placeholder="00000000" maxlength="4">
-															</div>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000" maxlength="4">
 														</div>
 													</td>
 													<td>
@@ -229,10 +227,12 @@
 															<input class="form-control" placeholder="00000000">
 														</div>
 													</td>
-													<td>XV Virtual Coordinate .......</td>													
+													<td>
+														Variable coordinates for determining next block address. {X1,Y1} and {X2,Y2} coordinates will be determined according to {XV,YV} upon restart of channel. These coordinates are used for Y:U:V (Y pointer) and RGB formats.
+													</td>													
 												</tr>
 												
-												<tr> <!-- XV Virtual Coordinate -->
+												<tr> <!-- YV Virtual Coordinate -->
 													<td>YV Virtual Coordinate</td>
 													<td>YV</td>
 													<td>9</td>
@@ -253,10 +253,142 @@
 															<input class="form-control" placeholder="00000000">
 														</div>
 													</td>
-													<td>YV Virtual Coordinate .......</td>													
+													<td>
+														Variable coordinates for determining next block address. {X1,Y1} and {X2,Y2} coordinates will be determined according to {XV,YV} upon restart of channel. These coordinates are used for Y:U:V (Y pointer) and RGB formats.
+													</td>													
+												</tr>
+
+												<tr> <!-- XB inner Block Coordinate -->
+													<td>XB inner Block Coordinate</td>
+													<td>XB</td>
+													<td>13</td>
+													<td>31</td>
+													<td>19</td>													
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														Variable coordinates for determining address within the block. These coordinates are used for Y:U:V (Y pointer) and RGB formats. Need 24 bits for 2D transfer support.
+													</td>													
+												</tr>												
+
+												<tr> <!-- YB inner Block Coordinate -->
+													<td>YB inner Block Coordinate</td>
+													<td>YB</td>
+													<td>12</td>
+													<td>43</td>
+													<td>32</td>													
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														Variable coordinates for determining address within the block. These coordinates are used for Y:U:V (Y pointer) and RGB formats. Need 24 bits for 2D transfer support.
+													</td>													
+												</tr>
+
+												<tr> <!-- New Sub Block -->
+													<td>New Sub Block</td>
+													<td>NSB_B</td>
+													<td>1</td>
+													<td>44</td>
+													<td>44</td>													
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														This bit determines if the next value for {XB,YB} should be taken from {XB,YB} saved in channel parameter memory or from new {x1,y1}/{x2,y2}.
+													</td>													
+												</tr>
+
+												<tr> <!-- Current Field -->
+													<td>Current Field</td>
+													<td>CF</td>
+													<td>1</td>
+													<td>45</td>
+													<td>45</td>													
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														CF = 0 Current field is even </br>
+														CF = 1 Current field is odd
+													</td>													
 												</tr>
 												
-
+												<tr> <!-- Mem U Buffer Offset -->
+													<td>Mem U Buffer Offset</td>
+													<td>UBO</td>
+													<td>22</td>
+													<td>67</td>
+													<td>46</td>													
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														Double buffer destination address offset for Y:U:V (U pointer) formats.The actual physical address value is divided by 8 (i.e. this parameter includes bits [24:3] of the actual address)
+													</td>													
+												</tr>												
+												
 												
 											</tbody>
 										</table>
@@ -265,7 +397,7 @@
 									
 									
                                 </div>
-                                <div class="tab-pane fade" id="non-interleaved-pills">
+                                <div class="tab-pane fade" id="interleaved-pills">
                                     <h4>Profile Tab</h4>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                                 </div>
