@@ -189,6 +189,7 @@
                                 <div class="tab-pane fade in active" id="non-interleaved-pills">
 								
 									<!-- Interleaved Tab panel -->
+
 									<div class="table-responsive">
 										<table class="table table-hover">
 											<thead>
@@ -417,6 +418,7 @@
 
 												<tr> <!-- Initial Offset X -->
 													<td>Initial Offset X</td>
+													<td>IOX</td>
 													<td>4</td>
 													<td>93</td>
 													<td>90</td>													
@@ -493,12 +495,12 @@
 													</td>													
 												</tr>	
 
-												<tr> <!-- Mem U Buffer Offset -->
-													<td>Mem U Buffer Offset</td>
-													<td>UBO</td>
-													<td>22</td>
-													<td>67</td>
-													<td>46</td>													
+												<tr> <!-- Band Mode -->
+													<td>Band Mode</td>
+													<td>BNDM</td>
+													<td>3</td>
+													<td>116</td>
+													<td>114</td>													
 													<td>
 														<div class="form-group">
 															<input class="form-control" placeholder="00000000">
@@ -515,16 +517,23 @@
 														</div>
 													</td>
 													<td>
-														Double buffer destination address offset for Y:U:V (U pointer) formats.The actual physical address value is divided by 8 (i.e. this parameter includes bits [24:3] of the actual address)
+														BNDM = 000 bands disable.</br>
+														BNDM = 010 bands enable. Band height = 8 lines.</br>
+														BNDM = 011 bands enable. Band height = 16 lines.</br>
+														BNDM = 100 bands enable. Band height = 32 lines.</br>
+														BNDM = 101 bands enable. Band height = 64 lines.</br>
+														BNDM = 110 bands enable. Band height = 128 lines.</br>
+														BNDM = 111 bands enable. Band height = 256</br>
+														When working in band mode, the channel's corresponding IDMAC_BNDM_EN bit has to be set.
 													</td>													
 												</tr>	
 
-												<tr> <!-- Mem U Buffer Offset -->
-													<td>Mem U Buffer Offset</td>
-													<td>UBO</td>
-													<td>22</td>
-													<td>67</td>
-													<td>46</td>													
+												<tr> <!-- Block Mode -->
+													<td>Block Mode</td>
+													<td>BM</td>
+													<td>2</td>
+													<td>118</td>
+													<td>117</td>													
 													<td>
 														<div class="form-group">
 															<input class="form-control" placeholder="00000000">
@@ -541,16 +550,19 @@
 														</div>
 													</td>
 													<td>
-														Double buffer destination address offset for Y:U:V (U pointer) formats.The actual physical address value is divided by 8 (i.e. this parameter includes bits [24:3] of the actual address)
+														BM = 00 block mode disable. BW = FW, BH = FH</br>
+														BM = 01 block mode enable. BW = 8, BH = 8</br>
+														BM = 10 block mode enable. BW = 16, BH = 16 (this mode is reserved for future use)</br>
+														BM = 11 not used
 													</td>													
 												</tr>	
 
-												<tr> <!-- Mem U Buffer Offset -->
-													<td>Mem U Buffer Offset</td>
-													<td>UBO</td>
-													<td>22</td>
-													<td>67</td>
-													<td>46</td>													
+												<tr> <!-- Rotation -->
+													<td>Rotation</td>
+													<td>ROT</td>
+													<td>1</td>
+													<td>119</td>
+													<td>119</td>													
 													<td>
 														<div class="form-group">
 															<input class="form-control" placeholder="00000000">
@@ -567,16 +579,17 @@
 														</div>
 													</td>
 													<td>
-														Double buffer destination address offset for Y:U:V (U pointer) formats.The actual physical address value is divided by 8 (i.e. this parameter includes bits [24:3] of the actual address)
+														ROT = 0 -> No rotation</br>
+														ROT = 1 -> 90 degree rotation clockwise
 													</td>													
 												</tr>	
 
-												<tr> <!-- Mem U Buffer Offset -->
-													<td>Mem U Buffer Offset</td>
-													<td>UBO</td>
-													<td>22</td>
-													<td>67</td>
-													<td>46</td>													
+												<tr> <!-- Horizontal Flip -->
+													<td>Horizontal Flip</td>
+													<td>HF</td>
+													<td>1</td>
+													<td>120</td>
+													<td>120</td>													
 													<td>
 														<div class="form-group">
 															<input class="form-control" placeholder="00000000">
@@ -593,16 +606,17 @@
 														</div>
 													</td>
 													<td>
-														Double buffer destination address offset for Y:U:V (U pointer) formats.The actual physical address value is divided by 8 (i.e. this parameter includes bits [24:3] of the actual address)
+														HF = 0 -> No flip</br>
+														HF = 1 -> Horizontal flip enable
 													</td>													
 												</tr>	
 
-												<tr> <!-- Mem U Buffer Offset -->
-													<td>Mem U Buffer Offset</td>
-													<td>UBO</td>
-													<td>22</td>
-													<td>67</td>
-													<td>46</td>													
+												<tr> <!-- Vertical Flip -->
+													<td>Vertical Flip</td>
+													<td>VF</td>
+													<td>1</td>
+													<td>121</td>
+													<td>121</td>													
 													<td>
 														<div class="form-group">
 															<input class="form-control" placeholder="00000000">
@@ -619,16 +633,17 @@
 														</div>
 													</td>
 													<td>
-														Double buffer destination address offset for Y:U:V (U pointer) formats.The actual physical address value is divided by 8 (i.e. this parameter includes bits [24:3] of the actual address)
+														VF = 0 -> No flip</br>
+														VF = 1 -> Vertical flip enable
 													</td>													
 												</tr>	
 
-												<tr> <!-- Mem U Buffer Offset -->
-													<td>Mem U Buffer Offset</td>
-													<td>UBO</td>
-													<td>22</td>
-													<td>67</td>
-													<td>46</td>													
+												<tr> <!-- Threshold Enable -->
+													<td>Threshold Enable</td>
+													<td>THE</td>
+													<td>1</td>
+													<td>122</td>
+													<td>122</td>													
 													<td>
 														<div class="form-group">
 															<input class="form-control" placeholder="00000000">
@@ -645,9 +660,541 @@
 														</div>
 													</td>
 													<td>
-														Double buffer destination address offset for Y:U:V (U pointer) formats.The actual physical address value is divided by 8 (i.e. this parameter includes bits [24:3] of the actual address)
+														THE = 0 -> Threshold disable</br>
+														THE = 1 -> Threshold enable
 													</td>													
 												</tr>													
+											
+												<tr> <!-- Conditional Access Polarity -->
+													<td>Conditional Access Polarity</td>
+													<td>CAP</td>
+													<td>1</td>
+													<td>123</td>
+													<td>123</td>													
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														CAP = 0 -> If conditional bit in CM register is low skip the access</br>
+														CAP = 1 -> If conditional bit in CM register is high skip the access.</br>
+														This mode is reserved for future use.
+													</td>													
+												</tr>	
+												
+												<tr> <!-- Conditional Access Enable -->
+													<td>Conditional Access Enable</td>
+													<td>CAE</td>
+													<td>1</td>
+													<td>124</td>
+													<td>124</td>													
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														CAE = 0 -> Conditional access disable</br>
+														CAE = 1 -> Conditional access enable</br>
+														This mode is reserved for future use.
+													</td>													
+												</tr>	
+
+												<tr> <!-- Frame Width -->
+													<td>Frame Width</td>
+													<td>FW</td>
+													<td>13</td>
+													<td>137</td>
+													<td>125</td>													
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														Number of pixels in one row, of the channel frame.</br>
+														FW</br>
+														000000000000 = 0001 pixels</br>
+														000000000001 = 0002 pixels</br>
+														..........................</br>
+														111111111111 = 8192 pixels
+													</td>													
+												</tr>	
+
+												<tr> <!-- Frame Height -->
+													<td>Frame Height</td>
+													<td>FH</td>
+													<td>12</td>
+													<td>149</td>
+													<td>138</td>													
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														Number of pixels in one column, of the channel frame.</br>
+														FH</br>
+														000000000000 = 0001 line</br>
+														000000000001 = 0002 lines</br>
+														.........................</br>
+														111111111111 = 4096 lines</br>
+														For progressive YUV 4:2:0 (non interleaved and partial interleaved formats) the FH value should be a multiple of 2.</br>
+														For interlaced YUV 4:2:0 (non interleaved and partial interleaved formats) the FH value should be a multiple of 4.
+													</td>													
+												</tr>	
+
+												<tr> <!-- End of Line interrupt -->
+													<td>End of Line interrupt</td>
+													<td>EOLI</td>
+													<td>1</td>
+													<td>150</td>
+													<td>150</td>													
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														End of line interrupt enable. The end of line indication is asserted once the last data of the line has been written.</br>
+														1 - generate an end of line interrupt</br>
+														0 - no affect
+													</td>													
+												</tr>	
+
+												<tr> <!-- Ext Mem Buffer 0 Address -->
+													<td>Ext Mem Buffer 0 Address</td>
+													<td>EBA0</td>
+													<td>29</td>
+													<td>28</td>
+													<td>0</td>													
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														1st double buffer destination address for RGB and Y:U:V (Y pointer) formats.</br>
+														This parameter must not be changed if the corresponding channel is enabled. The actual physical address value is divided by 8 (i.e. this parameter includes bits [31:3] of the actual address)
+													</td>													
+												</tr>	
+
+												<tr> <!-- Ext Mem Buffer 1 Address -->
+													<td>Ext Mem Buffer 1 Address</td>
+													<td>EBA1</td>
+													<td>29</td>
+													<td>57</td>
+													<td>29</td>													
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														2nd double buffer destination address for RGB and Y:U:V (Y pointer) formats.</br>
+														This parameter must not be changed if the corresponding channel is enabled. The actual physical address value is divided by 8 (i.e. this parameter includes bits [31:3] of the actual address)
+													</td>													
+												</tr>	
+
+												<tr> <!-- Interlace Offset -->
+													<td>Interlace Offset</td>
+													<td>ILO</td>
+													<td>20</td>
+													<td>77</td>
+													<td>58</td>													
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														2nd double buffer destination address for RGB and Y:U:V (Y pointer) formats.</br>
+														An interlaced data stored in the memory can be read as a consecutive progressive only if FW*BPP is a multiplication of 8.</br> 
+														The actual physical address value is divided by 8 (i.e. this parameter includes bits [22:3] of the actual address).</br>
+														For YUV420 formats, the ILO is relevant only to the Y component as the U and V components do not exist for the even lines.
+														</br>
+														This value is signed
+													</td>													
+												</tr>	
+
+												<tr> <!-- Number of Pixels in Whole Burst Access -->
+													<td>Number of Pixels in Whole Burst Access</td>
+													<td>NPB</td>
+													<td>8</td>
+													<td>84</td>
+													<td>78</td>													
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														Number of pixels per burst access. The following are valid numbers of pixels in a memory burst access according to the BPP parameter:</br>
+														NPB</br>
+														0000111 = 08 pixels in each burst</br>
+														0001111 = 16 pixels in each burst</br>
+														.................................</br>
+														0111111 = 64 pixels in each burst</br>
+														Range:</br>
+														16BPP => 1 -> 32 pixels (for YUV444 NI)</br>
+														08BPP => 1 -> 64 pixels (For YUV420 NI/PI and YUV422 NI/PI)</br>
+														In NI/PI formats the NPB has to be a multiplication of 8
+													</td>													
+												</tr>	
+
+												<tr> <!-- Pixel Format Select -->
+													<td>Pixel Format Select</td>
+													<td>PFS</td>
+													<td>4</td>
+													<td>88</td>
+													<td>85</td>													
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														4'h0 = non-interleaved 4:4:4</br>
+														4'h1 = non-interleaved 4:2:2</br>
+														4'h2 = non-interleaved 4:2:0</br>
+														4'h3 = partial interleaved 4:2:2</br>
+														4'h4 = partial interleaved 4:2:0</br>
+														4'h5 to 4'hF = NA
+													</td>													
+												</tr>	
+
+												<tr> <!-- Alpha Used -->
+													<td>Alpha Used</td>
+													<td>ALU</td>
+													<td>1</td>
+													<td>89</td>
+													<td>89</td>													
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														1 = the alpha associated with the data of this channel resides on another channel (separate buffer)</br>
+														0 = the alpha associated with the data of this channel resides along with the pixel data (same buffer)</br>
+														The corresponding alpha channel must be enabled to assure correct behavior.
+													</td>													
+												</tr>	
+
+												<tr> <!-- Alpha Channel Mapping -->
+													<td>Alpha Channel Mapping</td>
+													<td>ALBM</td>
+													<td>2</td>
+													<td>92</td>
+													<td>90</td>													
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														Alpha channel mapping - This parameter is a pointer to a buffer in the ATC memory.</br>
+														This parameter is relevant only to data channels that are associated with a separate alpha buffer (like graphic plane channels). The parameter should be programmed on the data channels' ALBM.</br>
+														Setting this parameter to any other channel has no meaning.
+													</td>													
+												</tr>
+
+												<tr> <!-- AXI Id -->
+													<td>AXI Id</td>
+													<td>ID</td>
+													<td>2</td>
+													<td>94</td>
+													<td>93</td>													
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														AXI protocol id.
+													</td>													
+												</tr>
+
+												<tr> <!-- Threshold -->
+													<td>Threshold</td>
+													<td>TH</td>
+													<td>7</td>
+													<td>101</td>
+													<td>95</td>													
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														0000000 = 32 lines</br>
+														0000001 = 64 lines</br>
+														..................</br>
+														1111111 = 4096 lines</br>
+													</td>													
+												</tr>
+
+												<tr> <!-- Stride Line -->
+													<td>Stride Line</td>
+													<td>SLY</td>
+													<td>14</td>
+													<td>115</td>
+													<td>102</td>													
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														Address vertical scaling factor in bytes for memory access. Also number of maximum bytes in the "Y" component row according to memory limitations.</br>
+														SLY</br>
+														00000000000000 = 00001 bytes</br>
+														00000000000001 = 00002 bytes</br>
+														............................</br>
+														11111111111111 = 16384 bytes</br>
+													</td>													
+												</tr>
+
+												<tr> <!-- Width3 -->
+													<td>Width3</td>
+													<td>WID3</td>
+													<td>3</td>
+													<td>127</td>
+													<td>125</td>													
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														Fourth color component size of the inputunpacking/output-packing pixel.</br>
+														WID3</br>
+														000 = 1 bits</br>
+														001 = 2 bits</br>
+														............</br>
+														111 = 8 bits</br>
+														As this is a non-interleaved format, this field is relevant only to the alpha associated with this pixel channel.
+													</td>													
+												</tr>
+
+												<tr> <!-- Stride Line -->
+													<td>Stride Line</td>
+													<td>SLUV</td>
+													<td>14</td>
+													<td>141</td>
+													<td>128</td>													
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														Address vertical scaling factor in bytes for memory access. Also number of maximum bytes in the "U" or "V" component row according to memory limitations.</br>
+														SLUV</br>
+														00000000000000 = 00001 bytes</br>
+														00000000000001 = 00002 bytes</br>
+														............................</br>
+														11111111111111 = 16384 bytes</br>
+													</td>													
+												</tr>
+
+												<tr> <!-- Conditional Read Enable -->
+													<td>Conditional Read Enable</td>
+													<td>CRE</td>
+													<td>1</td>
+													<td>149</td>
+													<td>149</td>													
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<input class="form-control" placeholder="00000000">
+														</div>
+													</td>
+													<td>
+														This bit enables the conditional read feature.
+													</td>													
+												</tr>
+
 											</tbody>
 										</table>
 									</div>
