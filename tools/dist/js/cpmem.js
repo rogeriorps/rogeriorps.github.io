@@ -105,6 +105,18 @@ $("#w0b3hex").blur(function(){
     update_ni();
 });
 
+$("#w0b4hex").blur(function(){
+    w0b4hex = $("#w0b4hex").val();
+    
+    if (!reghex8char.test(w0b4hex))
+        alert('Please, fill with a 8-digit hex value. E.g. 1234abcd');    
+    
+    ret = hexToBinary(w0b4hex);
+    w0b4hex2bin = ret['result'];
+    update_word0_bin();
+    update_ni();
+});
+
 $("#w1b0hex").blur(function(){
     w1b0hex = $("#w1b0hex").val();
 
@@ -153,6 +165,18 @@ $("#w1b3hex").blur(function(){
     update_ni();
 });
 
+$("#w1b4hex").blur(function(){
+    w1b4hex = $("#w1b4hex").val();
+    
+    if (!reghex8char.test(w1b4hex))
+        alert('Please, fill with a 8-digit hex value. E.g. 1234abcd');    
+    
+    ret = hexToBinary(w1b4hex);
+    w1b4hex2bin = ret['result'];
+    update_word1_bin();
+    update_ni();
+});
+
 //Bin fields blur
 $("#w0bin").blur(function(){
 
@@ -166,18 +190,20 @@ $("#w0bin").blur(function(){
 
 function update_word0_bin(){
 
-    value = w0b0hex2bin.concat(w0b1hex2bin);
+    value = w0b4hex2bin.concat(w0b3hex2bin);
     value = value.concat(w0b2hex2bin);
-    value = value.concat(w0b3hex2bin); 
+    value = value.concat(w0b1hex2bin);
+    value = value.concat(w0b0hex2bin);
     w0bin = value;
     $("#w0bin").val(value);
 }
 
 function update_word1_bin(){
 
-    value = w1b0hex2bin.concat(w1b1hex2bin);
+    value = w1b4hex2bin.concat(w1b3hex2bin);
     value = value.concat(w1b2hex2bin);
-    value = value.concat(w1b3hex2bin); 
+    value = value.concat(w1b1hex2bin);
+    value = value.concat(w1b0hex2bin);
     w1bin = value;
     $("#w1bin").val(value);
 }
@@ -200,9 +226,9 @@ function update_ni(){
     for (i = 0; i < ni.length; i++) { 
         
         if (ni[i][1])
-            binaryword = w1bin.substr(ni[i][2],ni[i][3]);
+            binaryword = w1bin.substr(160-ni[i][2]-ni[i][3],ni[i][3]);
         else
-            binaryword = w0bin.substr(ni[i][2],ni[i][3]);
+            binaryword = w0bin.substr(160-ni[i][2]-ni[i][3],ni[i][3]);
         //update hex
         ret = binaryToHex(binaryword);
         ni[i][4] = ret["result"];
