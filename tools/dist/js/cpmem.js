@@ -79,6 +79,7 @@ $("#w0b0hex").blur(function(){
     w0b0hex2bin = ret['result'];
     update_word0_bin();
     update_ni();
+    update_intl();
 });
 
 $("#w0b1hex").blur(function(){
@@ -94,6 +95,7 @@ $("#w0b1hex").blur(function(){
     w0b1hex2bin = ret['result'];
     update_word0_bin();
     update_ni();
+    update_intl();
 });
 
 $("#w0b2hex").blur(function(){
@@ -109,6 +111,7 @@ $("#w0b2hex").blur(function(){
     w0b2hex2bin = ret['result'];
     update_word0_bin();
     update_ni();
+    update_intl();
 });
 
 $("#w0b3hex").blur(function(){
@@ -124,6 +127,7 @@ $("#w0b3hex").blur(function(){
     w0b3hex2bin = ret['result'];
     update_word0_bin();
     update_ni();
+    update_intl();
 });
 
 $("#w0b4hex").blur(function(){
@@ -139,6 +143,7 @@ $("#w0b4hex").blur(function(){
     w0b4hex2bin = ret['result'];
     update_word0_bin();
     update_ni();
+    update_intl();
 });
 
 $("#w1b0hex").blur(function(){
@@ -154,6 +159,7 @@ $("#w1b0hex").blur(function(){
     w1b0hex2bin = ret['result'];
     update_word1_bin();
     update_ni();
+    update_intl();
 });
 
 $("#w1b1hex").blur(function(){
@@ -169,6 +175,7 @@ $("#w1b1hex").blur(function(){
     w1b1hex2bin = ret['result'];
     update_word1_bin();
     update_ni();
+    update_intl();
 });
 
 $("#w1b2hex").blur(function(){
@@ -184,6 +191,7 @@ $("#w1b2hex").blur(function(){
     w1b2hex2bin = ret['result'];
     update_word1_bin();
     update_ni();
+    update_intl();
 });
 
 $("#w1b3hex").blur(function(){
@@ -199,6 +207,7 @@ $("#w1b3hex").blur(function(){
     w1b3hex2bin = ret['result'];
     update_word1_bin();
     update_ni();
+    update_intl();
 });
 
 $("#w1b4hex").blur(function(){
@@ -214,6 +223,7 @@ $("#w1b4hex").blur(function(){
     w1b4hex2bin = ret['result'];
     update_word1_bin();
     update_ni();
+    update_intl();
 });
 
 //Bin fields blur
@@ -224,6 +234,7 @@ $("#w0bin").blur(function(){
     w0bin2hex = ret['result'];
     update_word0_hex();
     update_ni();
+    update_intl();
  
 });
 
@@ -292,7 +303,40 @@ function update_ni(){
         $(fieldname).val(ni[i][6]);        
         
     }
+}
+
+function update_intl(){
     
+    for (i = 0; i < intl.length; i++) { 
+        
+        if (intl[i][1])
+            binaryword = w1bin.substr(160-intl[i][2]-intl[i][3],intl[i][3]);
+        else
+            binaryword = w0bin.substr(160-intl[i][2]-intl[i][3],intl[i][3]);
+        //update hex
+        ret = binaryToHex(binaryword);
+        intl[i][4] = ret["result"];
+        var fieldname = "#intl_";
+        fieldname = fieldname.concat(intl[i][0]);
+        fieldname = fieldname.concat("_hex");
+        $(fieldname).val(intl[i][4]);
+        
+        //update bin
+        intl[i][5] = binaryword;
+        var fieldname = "#intl_";
+        fieldname = fieldname.concat(intl[i][0]);
+        fieldname = fieldname.concat("_bin");
+        $(fieldname).val(intl[i][5]);
+
+        //update dec
+        ret = parseInt(binaryword, 2);
+        intl[i][6] = ret;
+        var fieldname = "#intl_";
+        fieldname = fieldname.concat(intl[i][0]);
+        fieldname = fieldname.concat("_dec");
+        $(fieldname).val(intl[i][6]);        
+        
+    }
 }
 
 function update_ni_hex(){
@@ -318,6 +362,31 @@ function update_ni_dec(){
     ret = parseInt(ret, 2);
     ni_xv[2] = ret;
     $("#ni_xv_dec").val(ni_xv[2]);
+}
+
+function update_intl_hex(){
+    
+    ret = w0b0bin.substr(0,10);
+    ret = binaryToHex(ret);
+    intl_xv[0] = ret['result'];
+    $("#intl_xv_hex").val(intl_xv[0]);
+    
+}
+
+function update_intl_bin(){
+    
+    ret = w0b0bin.substr(0,10);
+    intl_xv[1] = ret;
+    $("#intl_xv_bin").val(intl_xv[1]);
+    
+}
+
+function update_intl_dec(){
+    
+    ret = w0b0bin.substr(0,10);
+    ret = parseInt(ret, 2);
+    intl_xv[2] = ret;
+    $("#intl_xv_dec").val(intl_xv[2]);
 }
 
 // converts binary string to a hexadecimal string
