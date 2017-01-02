@@ -227,6 +227,7 @@ $("#w1b4hex").blur(function(){
 });
 
 //Bin fields blur
+/*
 $("#w0bin").blur(function(){
 
     w0bin = $("#w0bin").val();
@@ -237,7 +238,7 @@ $("#w0bin").blur(function(){
     update_intl();
  
 });
-
+*/
 function update_word0_bin(){
 
     value = w0b4hex2bin.concat(w0b3hex2bin);
