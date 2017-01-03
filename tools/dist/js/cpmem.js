@@ -64,17 +64,17 @@ var intl = [
 
 var reghex8char = new RegExp(/^[A-Fa-f0-9]{8}$/i);
 
-$("#warning1").hide();
-
 //Hex fields blur
 $("#w0b0hex").blur(function(){
     w0b0hex = $("#w0b0hex").val();
 
     if (!reghex8char.test(w0b0hex)) {
-        $(this).focus();
         $("#warning1").show();
-    }else
+        $("#w0b0hex_warning").show();
+    }else{
         $("#warning1").hide();
+        $("#w0b0hex_warning").hide();
+    }
     ret = hexToBinary(w0b0hex);
     w0b0hex2bin = ret['result'];
     update_word0_bin();
@@ -86,11 +86,12 @@ $("#w0b1hex").blur(function(){
     w0b1hex = $("#w0b1hex").val();
     
     if (!reghex8char.test(w0b1hex)){
-        $(this).focus();
         $("#warning1").show();
-    }else
+        $("#w0b1hex_warning").show();
+    }else{
         $("#warning1").hide();
-    
+        $("#w0b1hex_warning").hide();
+    }
     ret = hexToBinary(w0b1hex);
     w0b1hex2bin = ret['result'];
     update_word0_bin();
@@ -102,11 +103,12 @@ $("#w0b2hex").blur(function(){
     w0b2hex = $("#w0b2hex").val();
     
     if (!reghex8char.test(w0b2hex)){
-        $(this).focus();
         $("#warning1").show();
-    }else
-        $("#warning1").hide();   
-    
+        $("#w0b2hex_warning").show();
+    }else{
+        $("#warning1").hide();
+        $("#w0b2hex_warning").hide();
+    }
     ret = hexToBinary(w0b2hex);
     w0b2hex2bin = ret['result'];
     update_word0_bin();
@@ -118,11 +120,12 @@ $("#w0b3hex").blur(function(){
     w0b3hex = $("#w0b3hex").val();
     
     if (!reghex8char.test(w0b3hex)){
-        $(this).focus();
         $("#warning1").show();
-    }else
+        $("#w0b3hex_warning").show();
+    }else{
         $("#warning1").hide();
-    
+        $("#w0b3hex_warning").hide();
+    }
     ret = hexToBinary(w0b3hex);
     w0b3hex2bin = ret['result'];
     update_word0_bin();
@@ -134,11 +137,12 @@ $("#w0b4hex").blur(function(){
     w0b4hex = $("#w0b4hex").val();
     
     if (!reghex8char.test(w0b4hex)){
-        $(this).focus();
         $("#warning1").show();
-    }else
+        $("#w0b4hex_warning").show();
+    }else{
         $("#warning1").hide();
-    
+        $("#w0b4hex_warning").hide();
+    }
     ret = hexToBinary(w0b4hex);
     w0b4hex2bin = ret['result'];
     update_word0_bin();
@@ -150,11 +154,12 @@ $("#w1b0hex").blur(function(){
     w1b0hex = $("#w1b0hex").val();
 
     if (!reghex8char.test(w1b0hex)){
-        $(this).focus();
         $("#warning1").show();
-    }else
+        $("#w1b0hex_warning").show();
+    }else{
         $("#warning1").hide();
-    
+        $("#w1b0hex_warning").hide();
+    }
     ret = hexToBinary(w1b0hex);
     w1b0hex2bin = ret['result'];
     update_word1_bin();
@@ -166,11 +171,12 @@ $("#w1b1hex").blur(function(){
     w1b1hex = $("#w1b1hex").val();
     
     if (!reghex8char.test(w1b1hex)){
-        $(this).focus();
         $("#warning1").show();
-    }else
+        $("#w1b1hex_warning").show();
+    }else{
         $("#warning1").hide();
-    
+        $("#w1b1hex_warning").hide();
+    }
     ret = hexToBinary(w1b1hex);
     w1b1hex2bin = ret['result'];
     update_word1_bin();
@@ -182,11 +188,12 @@ $("#w1b2hex").blur(function(){
     w1b2hex = $("#w1b2hex").val();
     
     if (!reghex8char.test(w1b2hex)){
-        $(this).focus();
         $("#warning1").show();
-    }else
+        $("#w1b2hex_warning").show();
+    }else{
         $("#warning1").hide();
-    
+        $("#w1b2hex_warning").hide();
+    }
     ret = hexToBinary(w1b2hex);
     w1b2hex2bin = ret['result'];
     update_word1_bin();
@@ -198,11 +205,12 @@ $("#w1b3hex").blur(function(){
     w1b3hex = $("#w1b3hex").val();
     
     if (!reghex8char.test(w1b3hex)){
-        $(this).focus();
         $("#warning1").show();
-    }else
+        $("#w1b3hex_warning").show();
+    }else{
         $("#warning1").hide();
-    
+        $("#w1b3hex_warning").hide();
+    }
     ret = hexToBinary(w1b3hex);
     w1b3hex2bin = ret['result'];
     update_word1_bin();
@@ -214,11 +222,12 @@ $("#w1b4hex").blur(function(){
     w1b4hex = $("#w1b4hex").val();
     
     if (!reghex8char.test(w1b4hex)){
-        $(this).focus();
         $("#warning1").show();
-    }else
+        $("#w1b4hex_warning").show();
+    }else{
         $("#warning1").hide();
-    
+        $("#w1b4hex_warning").hide();
+    }
     ret = hexToBinary(w1b4hex);
     w1b4hex2bin = ret['result'];
     update_word1_bin();
